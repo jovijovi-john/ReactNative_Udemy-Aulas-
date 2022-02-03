@@ -28,6 +28,9 @@ Veremos quais são os tipos de alinhamento e como podemos alinhar os conteúdos 
             flex-start-> alinha no começo
             flex-end-> alinha no final
             center-> alinha ao centro
-
+            stretch: {
+                flexDirection: "column"=> Para essa prop funcionar as views filhas não podem ter LARGURA FIXA
+                flexDirection: "row" => Para essa prop funcionar as views filhas não podem ter ALTURA FIXA
+            }
     !!!Importante: Independente do flexDirection, os valores possíveis para justifyContent e alignItems são sempre os mesmos.
     }
