@@ -41,7 +41,7 @@ Vamos aprender a usar uma biblioteca para icones SVG
             }
 
 # App.js: 
-
+```javascript
     import React from "react";
     import {
       View,
@@ -50,31 +50,31 @@ Vamos aprender a usar uma biblioteca para icones SVG
       TouchableOpacity
     } from "react-native";
     import { Ionicons, FontAwesome, Feather } from '@expo/vector-icons';
-    
+
     export default function App() {
       return(
         <View style={styles.container}>
-          
+
           <Text>Sujeito Programador</Text>
-          
+
           <Ionicons 
             name="md-checkmark-circle" 
             size={32} 
             color="green" 
           />
-    
+
           <FontAwesome 
             name="whatsapp" 
             size={32} 
             color="green" 
           />
-          
+
           <Feather 
             name="x" 
             size={32} 
             color="green" 
           />
-    
+
           <TouchableOpacity style={styles.btnYoutube}>
             <FontAwesome 
               name="youtube"
@@ -86,14 +86,14 @@ Vamos aprender a usar uma biblioteca para icones SVG
         </View>
       )
     }
-    
+
     const styles = StyleSheet.create({
       container: {
         flex: 1,
         justifyContent: "center",
         alignItems: "center"
       },
-    
+
       btnYoutube: {
         flexDirection: "row",
         alignItems: "center",
@@ -102,10 +102,11 @@ Vamos aprender a usar uma biblioteca para icones SVG
         backgroundColor: "#f00",
         borderRadius: 5
       },
-    
+
       btnText: {
         color: "#fff",
         paddingLeft: 10,
         fontWeight: "bold"
       }
     })
+```
