@@ -2,8 +2,8 @@ aprenderemos a trabalhar com TabNavigator, StackNavigator, Drawer, etc...
 
 primeiramente temos que instalar o react-navigation
 
-    Docs: https://reactnavigation.org/
-
+    Docs: https://reactnavigation.org/ e https://reactnavigation.org/docs/getting-started/
+    
 * #Instalação:
     
     npm install @react-navigation/native
@@ -101,8 +101,97 @@ O navigation vai guardar nosso hook de navegação, e .navigate(<nameScreen>) re
 # App.js
 
 ```javascript
+import React from "react";
 
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+import Home from "./src/pages/Home";
+import Sobre from "./src/pages/Sobre";
+
+const Stack = createNativeStackNavigator();
+
+export default function App(){
+  return(
+    <NavigationContainer>
+      <Stack.Navigator>
+
+        <Stack.Screen 
+          name="Home"
+          component={Home}
+          options={{
+            title: "Tela início",
+            headerStyle: {
+              backgroundColor: "#121212"
+            },
+            
+            headerTintColor: "#fff",
+            headerShown: false
+          }}
+        />
+
+        <Stack.Screen
+          name="Sobre"
+          component={Sobre}
+        />
+      
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
+}
 ```
 
 # src/pages/Home
+
+```javascript
+import React from "react";
+import {View, Text, StyleSheet, Button} from "react-native";
+
+import { useNavigation } from "@react-navigation/native"
+
+export default function Home(){
+
+    const navigation = useNavigation();
+
+    return(
+        <View style={styles.container}>
+            <Text>Tela home</Text>
+            <Button title="Ir para sobre" onPress={ () => navigation.navigate("Sobre") }/>
+        </View>
+    )
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center"
+    }
+})
+```
 # src/pages/Sobre
+
+```javascript
+import React from "react";
+import {
+    View,
+    Text,
+    StyleSheet
+} from "react-native";
+
+export default function Sobre() {
+    return (
+        <View style={styles.container}>
+            <Text>Página sobre</Text>
+        </View>
+    )
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center"
+    }
+})
+```
