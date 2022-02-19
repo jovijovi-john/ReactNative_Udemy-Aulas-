@@ -92,7 +92,7 @@ export default function SignIn() {
         onPress={cadastrar}
       >
 
-        <Text style={styles.textButton}>Logar</Text>
+        <Text style={styles.textButton}>Cadastrar</Text>
       
       </TouchableOpacity>
 
