@@ -46,3 +46,5 @@ Icons:
 TouchableWithoutFeedback é um botão sem nenhum efeito visual
 
 Precisamos criar o banco de dados que ainda não criamos, um realTimeDatabase. Deixe as configurações de leitura e escrita como true.
+
+link do repositorio do projeto: https://github.com/jovijovi-john/AppTarefas
